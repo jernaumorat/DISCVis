@@ -1,4 +1,6 @@
 <script lang="ts">
+  import {isEqual} from 'lodash';
+
   import Graph from "../Graph.svelte";
   import d3ToPng from 'd3-svg-to-png';
 
@@ -24,7 +26,8 @@
 
   let [labelOn, cornerOn, axesOn] = [true, true, true]
 
-  const blankItem = () => ({n: "", t: rand(), r: rand(), b: rand(), l: rand()})
+  // const blankItem = () => ({n: "", t: rand(), r: rand(), b: rand(), l: rand()})
+  const blankItem = () => ({n: "", t: 0, r: 0, b: 0, l: 0})
 </script>
 
 <Graph bind:data bind:labels bind:corners bind:labelOn bind:cornerOn bind:axesOn/>
@@ -84,6 +87,9 @@
                 </div>
                 <input type="range" max="100" min="0" tabindex="-1" bind:value={item.l}/>
             </div>
+            <button on:click={() => {
+                data = data.filter(i => !isEqual(i, item))
+            }}>Delete</button>
         </div>
     {/each}
 </div>
@@ -119,10 +125,15 @@
         padding: 5px;
     }
 
+    .item > button {
+        margin: 0 5px 0 5px
+    }
+
     input {
         width: 2em;
         margin: 0 5px 0 5px;
     }
+
 
     input::-webkit-outer-spin-button,
     input::-webkit-inner-spin-button {
