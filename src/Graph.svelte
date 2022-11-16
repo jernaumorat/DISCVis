@@ -155,18 +155,15 @@
     }
 
     :global(.banner) {
-        font-family: "Helvetica Neue";
         font-size: 24px;
     }
 
     :global(.corner) {
-        font-family: "Helvetica Neue";
         font-size: 56px;
         opacity: 0.5;
     }
 
     :global(.initial) {
-        font-family: "Helvetica Neue";
         font-size: 18px;
         white-space: pre;
     }

@@ -89,6 +89,10 @@
 </div>
 
 <style>
+    :global(body) {
+        font-family: sans-serif;
+    }
+
     .buttons {
         display: flex;
         flex-direction: row;
