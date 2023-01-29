@@ -15,9 +15,8 @@
     let svg;
     let ready = false;
 
-    // Use the greater of Assertive/Passive, Openness/Control
-    const horizPos = (d) => d.r > d.l ? d.r : 0 - d.l
-    const vertPos = (d) => d.t > d.b ? d.t : 0 - d.b
+    const horizPos = d => (d.x / 2) + (d.lr === 'left' ? -50 : 50)
+    const vertPos = d => d.y
 
     const draw = (data, labels, labelOn, cornerOn, axesOn) => {
         const padding = 80
@@ -184,10 +183,10 @@
     }
 
     :global(.bottomright) {
-        fill: green;
+        fill: blue;
     }
 
     :global(.bottomleft) {
-        fill: blue;
+        fill: green;
     }
 </style>
