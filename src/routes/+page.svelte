@@ -1,5 +1,6 @@
 <script lang="ts">
-  import {isEqual} from 'lodash';
+  import lodash from 'lodash';
+  const {isEqual} = lodash;
 
   import Graph from "../Graph.svelte";
   import d3ToPng from 'd3-svg-to-png';
