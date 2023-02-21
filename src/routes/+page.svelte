@@ -22,8 +22,8 @@
   let corners = {
     tl: 'D',
     tr: 'I',
-    br: 'C',
-    bl: 'S',
+    br: 'S',
+    bl: 'C',
   }
 
   let [labelOn, cornerOn, axesOn] = [true, true, true]
