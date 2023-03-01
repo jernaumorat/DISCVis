@@ -60,7 +60,13 @@
 				)
 			)
 			.attr('class', 'initialBox')
-			.attr('fill', (node) => node.attributes.getNamedItem('boxCol')?.nodeValue)
+			.attr(
+				'style',
+				(node) => (
+					console.log(node.attributes.getNamedItem('boxCol'),
+					`backgroundColor:${node.attributes.getNamedItem('boxCol')?.nodeValue}`
+				)
+			)
 			.lower();
 
 		if (axesOn) {
