@@ -14,9 +14,21 @@
 	<div class="outer">
 		<div>
 			<label for="radLeft">{labels.l}</label>
-			<input name="leftright" id="radLeft" value="left" type="radio" bind:group={item.lr} />
+			<input
+				name={`leftright-${item.id}`}
+				id="radLeft"
+				value="left"
+				type="radio"
+				bind:group={item.lr}
+			/>
 			<label for="radRight">{labels.r}</label>
-			<input name="leftright" id="radRight" value="right" type="radio" bind:group={item.lr} />
+			<input
+				name={`leftright-${item.id}`}
+				id="radRight"
+				value="right"
+				type="radio"
+				bind:group={item.lr}
+			/>
 		</div>
 	</div>
 	<div class="outer">

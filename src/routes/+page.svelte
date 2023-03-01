@@ -2,6 +2,8 @@
 	import lodash from 'lodash';
 	const { isEqual } = lodash;
 
+	import { v4 as uuid } from 'uuid';
+
 	import Graph from '../Graph.svelte';
 	import d3ToPng from 'd3-svg-to-png';
 	import Item from '../Item.svelte';
@@ -29,7 +31,14 @@
 	let [labelOn, cornerOn, axesOn] = [true, true, true];
 
 	// const blankItem = () => ({n: "", t: rand(), r: rand(), b: rand(), l: rand()})
-	const blankItem = () => ({ n: '', x: 0, y: 0, lr: 'left', col: '#f8f8ff' });
+	const blankItem = () => ({
+		n: '',
+		x: 0,
+		y: 0,
+		lr: 'left',
+		col: '#f8f8ff',
+		id: uuid().slice(0, 5)
+	});
 </script>
 
 <Graph bind:data bind:labels bind:corners bind:labelOn bind:cornerOn bind:axesOn />
